@@ -1,1 +1,14 @@
-
+.mainDiv{
+  width: 100vw;
+  height: 100%;
+}
+.contactForm{
+  min-width: 500px;
+  width:50%;
+  margin: 5% auto 0px auto;
+}
+.contactList{
+  min-width: 500px;
+  width:50%;
+  margin: auto;
+}
