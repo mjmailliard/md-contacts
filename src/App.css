@@ -1,16 +1,31 @@
 .mainDiv{
   width: 100vw;
   height: 100%;
+
+}
+.header{
+  width: 100%;
+  position: fixed;
+  height: 4em;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0px 5px 5px rgb(200, 200, 200);
+}
+.logo{
+  height: 3em;
+  padding: .5em 2em;
+
 }
 .contactForm{
+  padding-top: 5em;
   min-width: 500px;
   width:50%;
-  margin: 5% auto 0px auto;
+  margin: auto;
 }
 .contactList{
   min-width: 500px;
   width:50%;
-  margin: auto;
+  margin: 0px auto 2em auto;
   border: solid 2px #eaf1f8;
   border-radius: 5px;
 }
@@ -20,6 +35,9 @@
 .contactName:nth-of-type(odd){
   background-color: #eaf1f8;
 }
+.contactName:nth-of-type(even){
+  background-color: white;
+}
 .underline:hover{
   text-decoration-line: underline;
 }
@@ -27,6 +45,11 @@
   margin-left: 15px;
   padding: 7px;
 }
-.contactInfo:hover{
-  text-decoration-line: none;
+.button{
+  background-color: #00B9F0;
+  color: white;
+  border-radius: 5px;
+  height: 3em;
+  width: 10em;
+  margin: .75em;
 }
