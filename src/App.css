@@ -11,4 +11,22 @@
   min-width: 500px;
   width:50%;
   margin: auto;
+  border: solid 2px #eaf1f8;
+  border-radius: 5px;
+}
+.contactName{
+  padding: 10px;
+}
+.contactName:nth-of-type(odd){
+  background-color: #eaf1f8;
+}
+.underline:hover{
+  text-decoration-line: underline;
+}
+.contactInfo{
+  margin-left: 15px;
+  padding: 7px;
+}
+.contactInfo:hover{
+  text-decoration-line: none;
 }

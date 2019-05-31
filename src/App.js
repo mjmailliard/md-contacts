@@ -30,8 +30,19 @@ export class App extends Component {
     .then(data => this.setState({rawList: data.contacts}))
   }
   render() {
-    const clonedContacts = this.state.rawList
-    // clonedContacts.sort()
+    const sortedContacts = this.state.rawList.sort((a, b) => {
+      let nameA = a.name.toUpperCase() 
+      let nameB = b.name.toUpperCase()
+      if (nameA < nameB) {
+        return -1
+      }
+      if (nameA > nameB) {
+        return 1
+      }
+
+      return 0
+    })
+    
     return (
       <div className='mainDiv'>
         <div className='contactForm'>
@@ -51,10 +62,13 @@ export class App extends Component {
         </Collapsible>
         </div>
         <div className='contactList'>
-          {clonedContacts.map(contact => (
-            <div key={contact.id}>
-            <Collapsible trigger={<div style={{fontWeight: `${(contact.is_favorite === true) ? 'bold':''}` }}>{contact.name}</div>}>
-              {contact.email}{contact.phone}
+          {sortedContacts.map(contact => (
+            <div className='contactName' key={contact.id}>
+            <Collapsible trigger={<div className='underline' style={{fontWeight: `${(contact.is_favorite === true) ? 'bold':''}` }}>{contact.name}</div>}>
+             <div className='contactInfo'>
+              {contact.phone} <br/>
+              {contact.email}
+             </div>
             </Collapsible>
             </div>
           ))}
