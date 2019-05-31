@@ -67,15 +67,15 @@ export class App extends Component {
               <tbody>
                 <tr>
                   <td><label htmlFor='name'>Full Name</label></td> 
-                  <td><input type='text' id='name' name='name' onChange={event => this.setState({formName: event.target.value})} placeholder='Billy Bob' required/></td>
+                  <td><input type='text' id='name' name='name' className='textInput' onChange={event => this.setState({formName: event.target.value})} placeholder='Billy Bob' required/></td>
                 </tr>
                 <tr>
                   <td><label htmlFor='email'>E-mail Address</label></td>
-                  <td><input type='email' id='email' name='email' onChange={event => this.setState({formEmail: event.target.value})} placeholder='billy.bob@bob.com'/></td>
+                  <td><input type='email' id='email' name='email' className='textInput' onChange={event => this.setState({formEmail: event.target.value})} placeholder='billy.bob@bob.com'/></td>
                 </tr>
                 <tr>
                   <td><label htmlFor='phone'>Phone Number</label></td>
-                  <td><input type='tel' id='phone' name='phone' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onChange={event => this.setState({formPhone: event.target.value})} placeholder='801-555-3213'/></td>
+                  <td><input type='tel' id='phone' name='phone' className='textInput' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onChange={event => this.setState({formPhone: event.target.value})} placeholder='801-555-3213'/></td>
                 </tr>
                 <tr>
                   <td><label htmlFor='isFavorite'>Add to Favorites</label></td>
@@ -100,7 +100,7 @@ export class App extends Component {
             <Collapsible trigger={<div className='underline' style={{fontWeight: `${(contact.is_favorite === true) ? 'bold':''}` }}>{contact.name}</div>}>
              <div className='contactInfo'>
               {contact.phone} <br/>
-              {contact.email}
+              <a href={`mailto:${contact.email}`} rel="noopener noreferrer">{contact.email}</a>
              </div>
             </Collapsible>
             </div>

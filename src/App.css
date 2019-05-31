@@ -1,7 +1,6 @@
 .mainDiv{
   width: 100vw;
   height: 100%;
-
 }
 .header{
   width: 100%;
@@ -14,13 +13,26 @@
 .logo{
   height: 3em;
   padding: .5em 2em;
-
 }
 .contactForm{
   padding-top: 5em;
   min-width: 500px;
   width:50%;
   margin: auto;
+}
+form{
+  width: 99%;
+  margin:auto;
+}
+.textInput{
+  width: 20em;
+  padding: .3em;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+[type='checkbox']{
+  height: 3em;
+  width: 3em;
 }
 .contactList{
   min-width: 500px;
