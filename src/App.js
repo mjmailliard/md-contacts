@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Collapsible from 'react-collapsible';
 import './App.css';
-
+const api = "http://localhost:4000"
 export class App extends Component {
   constructor(props) {
     super(props)
@@ -15,10 +15,10 @@ export class App extends Component {
       contactList: [{id: 'id', name: 'name', email: 'email', phone: 'phone', is_favorite: true}]
     }
   }
-  getContacts(){
-    fetch('http://contacts-api.marketdial.com/contacts')
+  async getContacts(){
+    fetch(api)
     .then(results => results.json())
-    .then(data => this.setState({rawList: data.contacts}))
+    .then(data => this.setState({rawList: data}))
   }
   async formSubmit(event){
     event.preventDefault()
@@ -28,7 +28,7 @@ export class App extends Component {
       email: this.state.formEmail,
       is_favorite: this.state.formIsFavorite
     }
-    await fetch('http://contacts-api.marketdial.com/contact',{
+    await fetch(api,{
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
@@ -59,7 +59,10 @@ export class App extends Component {
     
     return (
       <div className='mainDiv'>
-        <div className='header'><img className='logo' src='https://app.marketdial.com/assets/marketdial-logo.svg' alt='MarketDial logo'/></div>
+        <div className='header'>
+          {/* <img className='logo' src='https://app.marketdial.com/assets/marketdial-logo.svg' alt='MarketDial logo'/> */}
+          <label className='logo'>Contacts</label>
+        </div>
         <div className='contactForm'>
         <Collapsible trigger={<button className='button'>Add Contact</button>}>
           <form onSubmit={event => this.formSubmit(event)}>
@@ -95,8 +98,8 @@ export class App extends Component {
         </div>
  
         <div className='contactList'>
-          {sortedContacts.map(contact => (
-            <div className='contactName' key={contact.id}>
+          {sortedContacts.map((contact,i) => (
+            <div className='contactName' key={i}>
             <Collapsible trigger={<div className='underline' style={{fontWeight: `${(contact.is_favorite === true) ? 'bold':''}` }}>{contact.name}</div>}>
              <div className='contactInfo'>
               {contact.phone} <br/>

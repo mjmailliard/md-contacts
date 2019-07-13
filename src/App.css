@@ -7,12 +7,14 @@
   position: fixed;
   height: 4em;
   z-index: 100;
-  background-color: white;
-  box-shadow: 0px 5px 5px rgb(200, 200, 200);
+  background-color: purple;
+  box-shadow: 5px 10px 10px #888888;
 }
 .logo{
   height: 3em;
   padding: .5em 2em;
+  font-size: 3em;
+  color: white;
 }
 .contactForm{
   padding-top: 5em;
@@ -40,6 +42,7 @@ form{
   margin: 0px auto 2em auto;
   border: solid 2px #eaf1f8;
   border-radius: 5px;
+  box-shadow: 5px 10px 10px #888888;
 }
 .contactName{
   padding: 10px;
@@ -58,7 +61,7 @@ form{
   padding: 7px;
 }
 .button{
-  background-color: #00B9F0;
+  background-color: purple;
   color: white;
   border-radius: 5px;
   height: 3em;
