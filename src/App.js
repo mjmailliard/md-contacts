@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Collapsible from 'react-collapsible';
 import './App.css';
-const api = "http://localhost:4000"
+const api = "https://peaceful-woodland-38152.herokuapp.com/"
 export class App extends Component {
   constructor(props) {
     super(props)
